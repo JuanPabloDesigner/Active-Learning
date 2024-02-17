@@ -127,6 +127,7 @@ a {
     align-items: flex-start;
     gap: 2rem;
     overflow-x: hidden;
+    padding-bottom: 0.5rem;
 }
 
 /* Hide the scrollbar for Webkit-based browsers 
