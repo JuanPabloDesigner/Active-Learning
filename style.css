@@ -18,10 +18,10 @@
     --text-color: #0A1014;
     --text-color-hover: #0A1014;
     --bg-color: white;
-    --stroke-color: rgba(207, 118, 104, 0.5);
+    --stroke-color: #0075FF;
     --surface-color: rgba(0, 0, 0, 0.05);
-    --surface-color-hover: rgba(207, 118, 104, 0.3);
-    --highlight-color: rgba(207, 118, 104, 0.1);
+    --surface-color-hover: rgba(0, 117, 255, 0.15);
+    --highlight-color: rgba(0, 117, 255, 0.15);
     --switch-bg-url: url(./public/images/sun.svg);
 }
 
@@ -29,6 +29,9 @@
     --text-color: white;
     --text-color-hover: white;
     --bg-color: #1C232B;
+    --stroke-color: white;
+    --surface-color-hover: rgba(255, 255, 255, 0.15);
+    --highlight-color: rgba(255, 255, 255, 0.15);
     --switch-bg-url: url(./public/images/moon-stars.svg);
 }
 
@@ -79,7 +82,7 @@ h2 {
     gap: 0.5rem;
 
     border-radius: 0.25rem;
-    border: 1px solid #0075FF;
+    border: 1px solid var(--stroke-color);
 }
 
 .nav-account:hover {
@@ -224,10 +227,11 @@ a {
 .card-content {
     display: flex;
     width: 18.5625rem;
+    height: 230px;
     padding: 1rem;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
 }
 
 .card-header {
