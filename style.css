@@ -10,26 +10,30 @@
     font-family: Plus Jakarta Sans;
     font-style: normal;
     line-height: normal;
+
+
 }
 
 :root {
     --text-color: #0A1014;
     --text-color-hover: #0A1014;
+    --bg-color: white;
     --stroke-color: rgba(207, 118, 104, 0.5);
     --surface-color: rgba(0, 0, 0, 0.05);
     --surface-color-hover: rgba(207, 118, 104, 0.3);
     --highlight-color: rgba(207, 118, 104, 0.1);
-    --switch-bg-url: url(#);
+    --switch-bg-url: url(./public/images/sun.svg);
 }
 
 .dark {
     --text-color: white;
     --text-color-hover: white;
     --bg-color: #1C232B;
+    --switch-bg-url: url(./public/images/moon-stars.svg);
 }
 
 h2 {
-    color: #0A1014;
+    color: var(--text-color);
     font-family: Plus Jakarta Sans;
     font-size: 24px;
     font-weight: 600;
@@ -51,13 +55,20 @@ h2 {
 }
 
 .nav-item h6 {
-    color: #0A1014;
+    color: var(--text-color);
     font-size: 1rem;
     font-weight: 500;
 }
 
 .nav-item h6:hover {
     text-decoration: underline;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+    justify-content: row;
+    align-items: center;
 }
 
 .nav-account {
@@ -76,7 +87,7 @@ h2 {
 }
 
 .nav-account h6 {
-    color: #0A1014;
+    color: var(--text-color);
     font-size: 1rem;
     font-weight: 500;
 }
@@ -85,6 +96,53 @@ h2 {
     color: white;
 }
 
+
+#button-container {
+    display: flex;
+    width: 80px;
+    padding: 0.25rem 0.5rem;
+}
+  
+#switch {
+    display: flex;
+    width: 4rem;
+}
+  
+#switch button {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    background: transparent var(--switch-bg-url) no-repeat center/cover;
+    border: 0;
+    border-radius: 50%;
+  
+    position: absolute;
+    align-self: center;
+    z-index: 1;
+    left: 89.5%;
+  
+    animation: slide-back 0.2s;
+}
+  
+.dark #switch button {
+    animation: slide-in 0.2s forwards;
+    left: 92%;
+}
+  
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+  
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
 
 /*
 ul {
@@ -201,7 +259,7 @@ a {
 }
 
 .card h4 {
-    color: #0A1014;
+    color: #0a1014;
     font-family: Plus Jakarta Sans;
     font-size: 16px;
     font-weight: 600;
@@ -270,3 +328,21 @@ a {
 .card-button:hover {
     background: linear-gradient(90deg, #40CAF4 0%, #82C042 100%);
 }
+
+@keyframes slide-in {
+    from {
+          left: 92%;
+      }
+      to {
+          left: 89.5%;
+      }
+  }
+    
+  @keyframes slide-back {
+    from {
+        left: 89.5%;
+    }
+    to {
+        left: 92%;
+    }
+  }

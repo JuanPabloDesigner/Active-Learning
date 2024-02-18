@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Active Learning</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
 </head>
-<body>
+<body style="background-color: var(--bg-color);">
     <nav class="navbar">
         <a href="https://juanpablodesigner.github.io/Active-Learning/">
             <img src="#" alt="logo">
@@ -56,12 +57,23 @@
                 </a>
             </li>
         </ul>
-        <div class="nav-account">
-            <img src="public/images/profile.png" alt="profile">
-            <a href="https://juanpablodesigner.github.io/Active-Learning/Completed/">
-                <h6>My Account</h6>
-            </a>
+        <div class="nav-right">
+            <div class="nav-account">
+                <img src="public/images/profile.png" alt="profile">
+                <a href="https://juanpablodesigner.github.io/Active-Learning/Completed/">
+                    <h6>My Account</h6>
+                </a>
+            </div>
+            <div id="button-container">
+                <div id="switch" onclick="toggleMode()">
+    
+                    <button></button>
+                    <span></span>
+    
+                </div>
+            </div>
         </div>
+
     </nav>
     <!--
     <h1>Active Learning</h1>
@@ -432,6 +444,5 @@
         });
       });
     </script>
-    <script src="script.js"/>
 </body>
 </html>
